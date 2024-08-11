@@ -1,0 +1,27 @@
+[
+  {
+    "content": "Great article! This really helped me understand the basics of JavaScript.",
+    "user_id": 2,
+    "blogPost_id": 1
+  },
+  {
+    "content": "Flexbox has always been confusing, but this guide made it so much clearer. Thanks!",
+    "user_id": 3,
+    "blogPost_id": 2
+  },
+  {
+    "content": "I wasn't aware of some of these new HTML5 features. Very informative.",
+    "user_id": 4,
+    "blogPost_id": 3
+  },
+  {
+    "content": "I’ve just started learning Node.js, and this post is a great intro.",
+    "user_id": 1,
+    "blogPost_id": 4
+  },
+  {
+    "content": "I love React, and these tips are super helpful!",
+    "user_id": 3,
+    "blogPost_id": 5
+  }
+]
