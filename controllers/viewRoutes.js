@@ -76,6 +76,7 @@ router.get("/blog/:id", async (req, res) => {
           attributes: ["name"],
         },
       ],
+      attributes: ["title", "content", "createdAt"],
     });
 
     const blogPost = blogPostData.get({ plain: true });

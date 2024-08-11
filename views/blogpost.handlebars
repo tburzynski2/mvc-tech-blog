@@ -1,0 +1,30 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <h1>{{this.title}}</h1>
+      <h2 class="text-muted">Created by
+        {{this.user.name}}
+        on
+        {{formatDate this.createdAt}}</h2>
+      <p class="lead">{{this.content}}</p>
+
+      <div class="mt-5">
+        <h3>Leave a Comment</h3>
+        <form action="/comment" method="POST">
+          <div class="form-group">
+            <label for="comment">Your Comment</label>
+            <textarea
+              class="form-control"
+              id="comment"
+              name="comment"
+              rows="4"
+              placeholder="Write your comment here..."
+            ></textarea>
+          </div>
+          <input type="hidden" name="blogPostId" value="{{this.id}}" />
+          <button type="submit" class="btn btn-primary mt-3">Submit Comment</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
