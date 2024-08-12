@@ -75,9 +75,19 @@ router.get("/blog/:id", async (req, res) => {
           model: User,
           attributes: ["name"],
         },
+        {
+          model: Comment,
+          attributes: ["content", "createdAt"],
+          include: {
+            model: User,
+            attributes: ["name"],
+          },
+        },
       ],
       attributes: ["title", "content", "createdAt"],
     });
+
+    console.log("\n\nBlog post data:\n", blogPostData, "\n\n");
 
     const blogPost = blogPostData.get({ plain: true });
 
