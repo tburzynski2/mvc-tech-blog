@@ -23,14 +23,14 @@
     </form>
   </div>
 
-  {{#if blogPosts.length}}
+  {{#if blogposts.length}}
     <div class="col-md-6 posts-list">
       <h3>Your Posts:</h3>
 
-      {{#each blogPosts as |blogPost|}}
+      {{#each blogposts as |blogPost|}}
         <div class="row mb-2">
           <div class="col-md-8">
-            <h4><a href="/blog/{{blogPost.id}}">{{blogPost.name}}</a></h4>
+            <h4><a href="/blog/{{blogPost.id}}">{{blogPost.title}}</a></h4>
           </div>
           <div class="col-md-4">
             <button
