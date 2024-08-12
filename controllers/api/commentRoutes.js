@@ -2,25 +2,6 @@ const router = require("express").Router();
 const { Comment, BlogPost, User } = require("../../models");
 const withAuth = require("../../utils/auth");
 
-// GET all comments for a specific blog post
-router.get("/blog/:blogPostId", async (req, res) => {
-  try {
-    const comments = await Comment.findAll({
-      where: { blogPostId: req.params.blogPostId },
-      include: [
-        {
-          model: User,
-          attributes: ["name"],
-        },
-      ],
-      order: [["createdAt", "ASC"]],
-    });
-    res.status(200).json(comments);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
 // POST a new comment
 router.post("/", withAuth, async (req, res) => {
   console.log("\n\nComment POST route hit.\n\nComment data:\n", req.body);
@@ -29,7 +10,7 @@ router.post("/", withAuth, async (req, res) => {
     const newComment = await Comment.create({
       content: req.body.comment_text,
       user_id: req.session.user_id,
-      blogPostId: req.body.blog_post_id,
+      blogpost_id: req.body.blog_post_id,
     });
     res.status(201).json(newComment);
   } catch (err) {
