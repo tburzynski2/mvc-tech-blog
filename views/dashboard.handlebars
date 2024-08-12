@@ -27,15 +27,15 @@
     <div class="col-md-6 posts-list">
       <h3>Your Posts:</h3>
 
-      {{#each blogposts as |blogPost|}}
+      {{#each blogposts}}
         <div class="row mb-2">
           <div class="col-md-8">
-            <h4><a href="/blog/{{blogPost.id}}">{{blogPost.title}}</a></h4>
+            <h4><a href="/blog/{{this.id}}">{{this.title}}</a></h4>
           </div>
           <div class="col-md-4">
             <button
               class="btn btn-sm btn-danger"
-              data-id="{{blogPost.id}}"
+              data-id="{{this.id}}"
             >DELETE</button>
           </div>
         </div>
@@ -45,3 +45,4 @@
 </div>
 
 <script src="/js/addBlogPost.js"></script>
+<script src="/js/deleteBlogPost.js"></script>

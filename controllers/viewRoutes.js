@@ -51,10 +51,12 @@ router.get("/dashboard", withAuth, async (req, res) => {
       include: [
         {
           model: BlogPost,
-          attributes: ["title", "content"],
+          attributes: ["id", "title", "content"],
         },
       ],
     });
+
+    console.log("\n\nUser data object:\n", userData, "\n\n");
 
     if (!userData) {
       // Handle case where userData is empty
